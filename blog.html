@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Healthcare Insights</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        .btn {
+            background-color: #5D2E75;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .btn:hover {
+            background-color: #4A2560;
+        }
+        /* Navigation toggle (hamburger menu) */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .nav-toggle span {
+            height: 2px;
+            background: #333;
+            margin: 4px 0;
+            width: 25px;
+        }
+
+        /* Blog Header */
+        .blog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 48px 0 32px;
+        }
+
+        .blog-title h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .blog-title p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #eaeaea;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .filter-btn.active {
+            background: #5D2E75;
+            color: white;
+            border-color: #5D2E75;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .blog-card {
+            display: flex;
+            gap: 24px;
+        }
+
+        .blog-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .blog-content {
+            flex: 1;
+        }
+
+        .category {
+            font-size: 12px;
+            color: #5D2E75;
+            margin-bottom: 8px;
+        }
+
+        .blog-title h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .blog-title h2 a {
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .blog-title h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .blog-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+        }
+
+        .page-btn {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eaeaea;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .page-btn.active {
+            background: #5D2E75;
+            color: white;
+            border-color: #5D2E75;
+        }
+
+        .read-more {
+            display: block;
+            width: fit-content;
+            margin: 32px auto;
+            padding: 12px 24px;
+            background: white;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card {
+                flex-direction: column;
+            }
+
+            .blog-image {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="landing.html"><img src="assets/GK Orchids - Logo.png" alt="G K Orchids Logo" class="logo"></a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><button class="btn">Contact Us</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="blog-header">
+            <div class="blog-title">
+                <h1>Blogs</h1>
+                <p>written for you by dedicated professionals</p>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="latest">Latest</button>
+                <button class="filter-btn" data-filter="popular">Popular</button>
+            </div>
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog posts will be dynamically inserted here -->
+        </div>
+
+        <button class="read-more" id="readMore">Read More</button>
+
+        <div class="pagination" id="pagination">
+            <!-- Pagination will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <script>
+        // Blog post data
+        const blogPosts = [
+            {
+                category: 'Research',
+                title: 'Advancements in Drug Discovery',
+                subtitle: 'Bringing hope and healing',
+                author: 'Dr. Emily Johnson',
+                date: 'October 15, 2022',
+                readTime: '5 min read',
+                image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(8462)-BGrNCtifX0wDvhdxmwtWFD72hrxukU.png',
+                popular: true,
+                link: 'blogs/Advancements in Drug Discovery.html'
+            },
+            {
+                category: 'Quality Assurance',
+                title: 'Ensuring Safety and Efficacy',
+                subtitle: 'Commitment to highest standards',
+                author: 'Dr. Catherine Roberts',
+                date: 'November 18, 2022',
+                readTime: '7 min read',
+                image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(8462)-BGrNCtifX0wDvhdxmwtWFD72hrxukU.png',
+                popular: false,
+                link: 'blogs/Ensuring Safety and Efficacy.html'
+            },
+            {
+                category: 'Healthcare',
+                title: 'The Future of Medicine',
+                subtitle: 'Innovation for better lives',
+                author: 'Dr. Michael Anderson',
+                date: 'November 2, 2022',
+                readTime: '6 min read',
+                image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(8462)-BGrNCtifX0wDvhdxmwtWFD72hrxukU.png',
+                popular: true,
+                link: 'blogs/Future of medicine.html'
+            },
+            {
+                category: 'Patient Care',
+                title: 'Putting Patients First',
+                subtitle: 'Empowering healthier lives',
+                author: 'Dr. David Wilson',
+                date: 'December 5, 2022',
+                readTime: '4 min read',
+                image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(8462)-BGrNCtifX0wDvhdxmwtWFD72hrxukU.png',
+                popular: false,
+                link: 'blogs/putting-patients-first.html'
+            }
+        ];
+
+        // State management
+        let currentPage = 1;
+        const postsPerPage = 4;
+        let currentFilter = 'latest';
+
+        // Functions
+        function renderBlogPost(post) {
+            return `
+                <article class="blog-card">
+                    <img src="${post.image}" alt="${post.title}" class="blog-image">
+                    <div class="blog-content">
+                        <div class="category">${post.category}</div>
+                        <div class="blog-title">
+                            <h2><a href="${post.link}">${post.title}</a></h2>
+                        </div>
+                        <div class="blog-subtitle">${post.subtitle}</div>
+                        <div class="blog-meta">
+                            <span>${post.author}</span>
+                            <span>${post.date}</span>
+                            <span>${post.readTime}</span>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        function renderPagination(totalPages) {
+            const pagination = document.getElementById('pagination');
+            let paginationHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    paginationHTML += `
+                        <button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">
+                            ${i}
+                        </button>
+                    `;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    paginationHTML += '<span class="page-btn">...</span>';
+                }
+            }
+
+            pagination.innerHTML = paginationHTML;
+        }
+
+        function filterAndRenderPosts() {
+            const filteredPosts = currentFilter === 'popular' 
+                ? blogPosts.filter(post => post.popular)
+                : [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            const startIndex = (currentPage - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const currentPosts = filteredPosts.slice(startIndex, endIndex);
+
+            document.getElementById('blogGrid').innerHTML = currentPosts.map(renderBlogPost).join('');
+            renderPagination(Math.ceil(filteredPosts.length / postsPerPage));
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                e.target.classList.add('active');
+                currentFilter = e.target.dataset.filter;
+                currentPage = 1;
+                filterAndRenderPosts();
+            });
+        });
+
+        document.getElementById('pagination').addEventListener('click', (e) => {
+            if (e.target.classList.contains('page-btn') && e.target.dataset.page) {
+                currentPage = parseInt(e.target.dataset.page);
+                filterAndRenderPosts();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        // Initial render
+        filterAndRenderPosts();
+    </script>
+</body>
+</html>

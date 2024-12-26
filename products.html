@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G K Orchids Product Catalogue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+        }
+        a:link {
+        color: palevioletred; /* Unvisited link */
+        text-decoration: none;
+        }
+        a:visited {
+        color: pink; /* Visited link */
+        }
+        a:hover {
+        color: purple; /* Mouse over link */
+        }
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        .btn1 {
+            background-color: #5D2E75;
+            color: white;
+            text-decoration-color: #000000;  
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .btn1:hover {
+            background-color: #4A2560;
+            color: #000;
+        }
+        /* Navigation toggle (hamburger menu) */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .nav-toggle span {
+            height: 2px;
+            background: #333;
+            margin: 4px 0;
+            width: 25px;
+        }
+        h1, h2 {
+            color: #1A1A1A;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Card Flip Animation */
+        .card-container {
+            perspective: 1000px;
+            height: 400px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            height: 100%;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .card-front {
+            background: white;
+        }
+
+        .card-back {
+            background: #5D2E75;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-back h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-back p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            background-color: #5D2E75;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            text-decoration-color: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .detailed-catalogue {
+            margin-top: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .faq {
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .explore-products {
+            margin-top: 30px;
+        }
+
+
+        /* Contact form */
+        .contact-form {
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f8f8f8;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #5D2E75; /* Choose any color you prefer for the hover effect */
+            text-decoration: underline; /* Optional: Add underline on hover */
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 calc(20% - 2rem);
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+        }
+
+        .footer-bottom .logo {
+            max-width: 100px;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+            .feature {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+            }
+
+            .feature-image {
+                margin-bottom: 0;
+                margin-right: 1rem;
+            }
+
+            .feature-content {
+                flex: 1;
+            }
+            .features-grid, .testimonial-grid {
+                flex-direction: column;
+            }
+            .feature, .testimonial {
+                flex: 1 1 100%;
+            }
+            .footer-column {
+                flex: 1 1 100%;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+            nav ul.showing {
+                display: flex;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+            .skincare-content {
+                flex-direction: column;
+            }
+            .skincare-content > div, .skincare-image {
+                max-width: 100%;
+            }
+            .search-form {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        @media (max-width: 992px) {
+            .hero-content, .hero-image {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="landing.html"><img src="assets/GK Orchids - Logo.png" alt="G K Orchids Logo" class="logo"></a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><button class="btn1"><a href="contact.html">Contact Us</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>CREAM</h1>
+        <p class="subtitle">G.K orchids specialty products</p>
+
+        <div class="product-grid">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/BrillerC.jpg" alt="Product 1">
+                    </div>
+                    <div class="card-back">
+                        <h3>Briller C</h3>
+                        <p>Description of Product 1</p>
+                        <a href="products/briller.html"><button class="btn">Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <h1>SOAPS</h1>
+        <p class="subtitle">G.K orchids specialty products</p>
+
+        <div class="product-grid">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/gardena.jpg" alt="Product 1">
+                    </div>
+                    <div class="card-back">
+                        <h3>Briller C</h3>
+                        <p>Description of Product 1</p>
+                        <a href="products/gardena.html"><button class="btn">Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/oz.jpg" alt="Product 2">
+                    </div>
+                    <div class="card-back">
+                        <h3>Product 2</h3>
+                        <p>Description of Product 2</p>
+                        <a href="products/oz.html"><button class="btn">Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/kintbar.jpg" alt="Product 3">
+                    </div>
+                    <div class="card-back">
+                        <h3>Product 3</h3>
+                        <p>Description of Product 3</p>
+                        <a href="products/kintbar.html"><button class="btn">Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/orbact.jpg" alt="Product 4">
+                    </div>
+                    <div class="card-back">
+                        <h3>Product 4</h3>
+                        <p>Description of Product 4</p>
+                        <a href="products/orbact.html"><button class="btn">Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <h1>FACEWASH / LOTIONS / SUNSCREEN</h1>
+        <p class="subtitle">G.K orchids specialty products</p>
+
+        <div class="product-grid">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/uvgaurd.jpg" alt="Product 1">
+                    </div>
+                    <div class="card-back">
+                        <h3>Briller C</h3>
+                        <p>Description of Product 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/pilzo.jpg" alt="Product 3">
+                    </div>
+                    <div class="card-back">
+                        <h3>Product 3</h3>
+                        <p>Description of Product 3</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/pilzoct.jpg" alt="Product 4">
+                    </div>
+                    <div class="card-back">
+                        <h3>Product 4</h3>
+                        <p>Description of Product 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <h1>SERUMS</h1>
+        <p class="subtitle">G.K orchids specialty products</p>
+
+        <div class="product-grid">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/volopro.jpg" alt="Product 1">
+                    </div>
+                    <div class="card-back">
+                        <h3>Briller C</h3>
+                        <p>Description of Product 1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <h1>TABLETS</h1>
+        <p class="subtitle">G.K orchids specialty products</p>
+
+        <div class="product-grid">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/dedine.jpg" alt="Product 2">
+                    </div>
+                    <div class="card-back">
+                        <h3>Product 2</h3>
+                        <p>Description of Product 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="assets/isochid.jpg" alt="Product 4">
+                    </div>
+                    <div class="card-back">
+                        <h3>Product 4</h3>
+                        <p>Description of Product 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* Product catalogue */
+            .product-catalogue {
+                padding: 4rem 2rem;
+            }
+    
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+    
+            .product-card {
+                border: 1px solid var(--border);
+                padding: 1rem;
+                border-radius: 8px;
+            }
+    
+            /* Product table */
+            .product-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 2rem 0;
+            }
+    
+            .product-table th,
+            .product-table td {
+                padding: 0.75rem;
+                border: 1px solid var(--border);
+                text-align: left;
+            }
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .hero h1 {
+                    font-size: 2rem;
+                }
+
+                .nav-links {
+                    display: none;
+                }
+
+                .mobile-menu-btn {
+                    display: block;
+                }
+            }
+        </style>
+        <div class="product-catalogue">
+            <h2>Detailed Product Catalogue</h2>
+            <p>salt composition and quantity</p>
+            
+            <div class="product-table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="products/blight500.html">BLIGHT-500 TABLET</a></td>
+                            <td>GRISEOFULVIN 500 MG TABLETS</td>
+                            <td>20's 10</td>
+                        </tr>
+                        <tr>
+                            <td><a href="products/isochid10.html">ISOCHID-10 SOFTGEL</a></td>
+                            <td>ISOTRETINOIN 10MG</td>
+                            <td>10's 10</td>
+                        </tr>
+                        <tr>
+                            <td><a href="products/bu150.html">BU-150</a></td>
+                            <td>FLUCONAZOLE 150MG TABLETS</td>
+                            <td>10's</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/dedine.html">DEDINE</a></td>
+                            <td>DESLORATIDINE 5 MG TABLETS</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/GMP8.html">GMP-8</a></td>
+                            <td>METHYLPREDNISOLONE 4/8/16 MG TABLETS</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/isochid20.html">ISOCHID-20 </a></td>
+                            <td>ISOTRETINOIN 20MG</td>
+                            <td>1's 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/orped.html">ORPE-D</a></td>
+                            <td>PANTOPRAZOLE & DOMPERIDONE GASTRO RESISTANT TABLETS</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/rizlm.html">RIZ-LM</a></td>
+                            <td>LEVOCETRIZINE 10MG + MONTELUKAST</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/swam250.html">SWAM-250</a></td>
+                            <td>TERBINAFINE 250</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/swam500.html">SWAM-500</a></td>
+                            <td>TERBINAFINE 500</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/swiz350.html">SWIZ-350</a></td>
+                            <td>ITRACONOZOLE 100MG & TERBINAFINE 250MG TABLETS</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="products/vitor.html">VITOR TABLETS</a></td>
+                            <td>METHOXSALEN TABS 10MG</td>
+                            <td>10 x 10</td>
+                        </tr>
+                        <tr>
+
+                            <TD>VOLOPRO</TD>
+                            <TD>MINOXIDIL 5% & PROCAPIL 3%</TD>
+                            <TD>60 ML</TD>
+                        </tr>
+                        <tr>
+
+                            <TD>A-GLOW FACE WASH</TD>
+                            <TD>KOJIC ACID, VITAMIN C, L-GLUTATHIONE,GLYCOLIC ACID</TD>
+                            <TD>60 GM</TD>
+                        </tr>
+                        <TR>
+
+                            <TD>UV GUARD SPF 50</TD>
+                            <TD>LOW COST SUNSCREEN WITH SPF 50</TD>
+                            <TD>60 ML</TD>
+                        </TR>
+                        <TR>
+
+                            <TD>PILZO-LOTION</TD>
+                            <TD>KETACONAZOLE 2% + ZPTO 1%</TD>
+                            <TD>100 ML</TD>
+                        </TR>
+                        <TR>
+
+                            <TD>PILZO-CT LOTION</TD>
+                            <TD>KETACONAZOLE 2% + COAL TAR 4%</TD>
+                            <TD>100 ML</TD>
+                        </TR>
+                        <TR>
+
+                            <TD>GARDENA MOISTURISING SOAP</TD>
+                            <TD>GLYCERINE TRANSPARENT SOAP</TD>
+                            <TD>100 GM</TD>
+                        </TR>
+                        <TR>
+
+                            <TD>OZ SOAP</TD>
+                            <TD>AZELAIC ACID SOAP 2.5%</TD>
+                            <TD>75 GM</TD>
+                        </TR>
+                        <TR>
+
+                            <TD>PILZO SOAP</TD>
+                            <TD>KETACONAZOLE 2% + CETRIMIDE 0.5%</TD>
+                            <TD>75 GM</TD>
+                        </TR>
+                        <TR>
+
+                            <TD>ORBACT SOAP</TD>
+                            <TD>CHLORHEXIDINE & TRICLOSAN SOAP</TD>
+                            <TD>75 GM</TD>
+                        </TR>
+                        <TR>
+
+                            <TD>KINT BAR BABY SOAP</TD>
+                            <TD>SHEA BUTTER, KOKUM BUTTER , MILK PROTEIN , ALMOND OIL</TD>
+                            <TD>75 GM</TD>
+                        </TR>
+                        <!-- Add more product rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">What are our products?</div>
+                <div class="faq-answer">We offer a wide range of dermatological pharmaceutical products that cater to various medical needs. Our products include prescription drugs, over-the-counter medications, creams, lotions, ointments, emollients and specialty medicines.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I become an investor in our company?</div>
+                <div class="faq-answer">If you're interested in becoming an investor, please visit our investor page for more information on how to get started.</div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+
+        <div class="explore-products">
+            <h2>Explore Our Products in detail</h2>
+            <p>Browse through our wide range of pharmaceutical products and discover how we are improving lives through innovative healthcare solutions.</p>
+            <a href="#" class="btn">Download Product PDF</a>
+        </div>
+
+
+    </div>
+
+
+
+    <section class="contact-form">
+        <h2>Join our contact list</h2>
+        <form id="contactForm">
+            <label for="whatsappNumber">WhatsApp Number</label>
+            <input type="text" id="whatsappNumber" class="form-input" placeholder="WhatsApp Number" required>
+            <button type="submit" class="btn btn-primary">Contact</button>
+            <p class="form-disclaimer">By subscribing you agree to with our Privacy Policy</p>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Briller C</a></li>
+                        <li><a href="#">Pilzo Lotion</a></li>
+                        <li><a href="#">OZ Soap</a></li>
+                        <li><a href="#">Gardena Soap</a></li>
+                        <li><a href="#">UV Guard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Blog</h3>
+                    <ul>
+                        <li><a href="#">Anti-Aging Products</a></li>
+                        <li><a href="#">Skin-Whitening Products</a></li>
+                        <li><a href="#">Skin-Tightening Products</a></li>
+                        <li><a href="#">Healthy Skin Lifestyle</a></li>
+                        <li><a href="#">Unhealthy Skin Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Media</h3>
+                    <ul>
+                        <li><a href="#">Annual Report 2024</a></li>
+                        <li><a href="#">Q1 2024</a></li>
+                        <li><a href="#">Q2 2024</a></li>
+                        <li><a href="#">Q3 2024</a></li>
+                        <li><a href="#">Annual Report 2022</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Investor</h3>
+                    <ul>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Why Invest</a></li>
+                        <li><a href="#">Event & Presentations</a></li>
+                        <li><a href="#">Financials</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Stock Info</a></li>
+                        <li><a href="#">Corporate Governance</a></li>
+                        <li><a href="#">Shareholder Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Phone/Whatsapp</a></li>
+                        <li><a href="#">Address</a></li>
+                        <li><a href="#">Social Media</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="assets/GK Orchids - Logo.png" alt="Logo" class="logo">
+                <p>&copy; 2018 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add interactivity for mobile devices
+        document.querySelectorAll('.card-container').forEach(container => {
+            container.addEventListener('touchstart', function() {
+                this.querySelector('.card').style.transform = 'rotateY(180deg)';
+            });
+
+            container.addEventListener('touchend', function() {
+                this.querySelector('.card').style.transform = 'rotateY(0deg)';
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // JavaScript for basic interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button functionality
+            const contactBtn = document.querySelector('nav .btn1');
+            contactBtn.addEventListener('click', function() {
+                alert('Contact form will be displayed here.');
+            });
+
+            // Add hover effect to all buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    this.style.opacity = '0.8';
+                });
+                button.addEventListener('mouseout', function() {
+                    this.style.opacity = '1';
+                });
+            });
+
+            // Navigation menu toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('showing');
+            });
+
+            // Form submission handling
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const whatsappNumber = this.querySelector('input').value;
+                alert('Thank you for subscribing! We will contact you at: ' + whatsappNumber);
+            });
+
+            // Product table sorting
+            document.querySelectorAll('.product-table th').forEach(header => {
+                header.addEventListener('click', () => {
+                    const table = header.closest('table');
+                    const index = Array.from(header.parentElement.children).indexOf(header);
+                    const rows = Array.from(table.querySelectorAll('tbody tr'));
+                    
+                    rows.sort((a, b) => {
+                        const aValue = a.children[index].textContent;
+                        const bValue = b.children[index].textContent;
+                        return aValue.localeCompare(bValue);
+                    });
+
+                    table.querySelector('tbody').append(...rows);
+                });
+            });
+        });
+    </script>
+
+    <script>
+
+
+        // Optional: Add touch support for mobile devices
+        document.querySelectorAll('.card').forEach(card => {
+            let touchStart;
+            
+            card.addEventListener('touchstart', (e) => {
+                touchStart = e.changedTouches[0].screenX;
+            });
+
+            card.addEventListener('touchend', (e) => {
+                const touchEnd = e.changedTouches[0].screenX;
+                const difference = touchStart - touchEnd;
+
+                if (Math.abs(difference) > 50) { // Minimum swipe distance
+                    card.style.transform = difference > 0 ? 'rotateY(180deg)' : 'rotateY(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

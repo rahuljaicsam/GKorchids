@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMP-8 | G K Orchids</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .btn1 {
+            background-color: #5D2E75;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .btn1:hover {
+            background-color: #4A2560;
+        }
+
+        /* Navigation toggle (hamburger menu) */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            height: 2px;
+            background: #333;
+            margin: 4px 0;
+            width: 25px;
+        }
+
+        h1, h2 {
+            color: #1A1A1A;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .product-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-images {
+            flex: 1 1 300px;
+            max-width: 300px;
+            border: 1px solid #eee;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-images img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .thumbnail-list img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product-info {
+            flex: 1 1 500px;
+        }
+
+        .product-info h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .brand, .rating-and-reviews {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-and-reviews span {
+            margin-right: 8px;
+        }
+
+        .rating {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .price-box {
+            margin: 1rem 0;
+            background: #f9f9f9;
+            padding: 1rem;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+        }
+
+        .price-box .price {
+            font-size: 1.5rem;
+            color: #e53935;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-box .mrp {
+            color: #666;
+            font-size: 14px;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .price-box .discount {
+            color: #28a745;
+            font-size: 14px;
+        }
+
+        .buy-section {
+            margin-top: 1rem;
+        }
+
+        .buy-section select,
+        .buy-section button {
+            padding: 0.5rem;
+            font-size: 14px;
+            margin-right: 0.5rem;
+        }
+
+        .buy-section button {
+            background-color: #e53935;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .buy-section button:hover {
+            background-color: #c62828;
+        }
+
+        .product-highlights {
+            margin-top: 2rem;
+        }
+
+        .product-highlights h2 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .product-highlights ul {
+            list-style: disc;
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .additional-offers, .ratings-reviews, .product-info-section, .faq-section {
+            margin-top: 2rem;
+        }
+
+        .additional-offers h3,
+        .ratings-reviews h3,
+        .product-info-section h3,
+        .faq-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .additional-offers p,
+        .ratings-reviews p,
+        .product-info-section p,
+        .faq-section p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .ratings-overview {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ratings-overview .score {
+            font-size: 2rem;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .review {
+            border-top: 1px solid #eaeaea;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .review p {
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+        }
+
+        .review .author {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .review .date {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .faq-section ul {
+            list-style: disc;
+            margin-left: 20px;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .faq-answer {
+            margin-bottom: 16px;
+            color: #666;
+        }
+
+        .similar-products {
+            margin-top: 2rem;
+        }
+
+        .similar-products h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .similar-grid {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .similar-item {
+            border: 1px solid #eee;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .similar-item img {
+            max-width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .similar-item p {
+            font-size: 14px;
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        footer {
+            border-top: 1px solid #eaeaea;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail {
+                flex-direction: column;
+            }
+            .similar-grid {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            nav ul.showing {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .contact-section {
+                flex-direction: column;
+            }
+
+            .contact-details, .contact-form-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content, .hero-image {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../landing.html"><img src="../assets/GK Orchids - Logo.png" alt="G K Orchids Logo" class="logo"></a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="../products.html">Products</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../media.html">Media</a></li>
+                <li><button class="btn1">Contact Us</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <p style="font-size:14px; color:#666; margin-top:1rem;">
+            Home > Featured > Anti-Inflammatory & Steroids > GMP-8
+        </p>
+
+        <div class="product-detail">
+            <!-- Left column: product images -->
+            <div class="product-images">
+                <img src="../assets/gmp8.jpg" alt="GMP-8 (Methylprednisolone 4/8/16 mg Tablets)">
+                <div class="thumbnail-list">
+                    <img src="../assets/gmp8.jpg" alt="Thumbnail 1">
+                    <img src="../assets/gmp8.jpg" alt="Thumbnail 2">
+                    <img src="../assets/gmp8.jpg" alt="Thumbnail 3">
+                </div>
+            </div>
+
+            <!-- Right column: product info -->
+            <div class="product-info">
+                <h1>GMP-8 (Methylprednisolone 4/8/16 mg Tablets)</h1>
+                <div class="brand">By G K Orchids Pharmaceuticals Ltd</div>
+                <div class="rating-and-reviews">
+                    <span class="rating">4.6★</span>
+                    <span>1,450 Ratings & 250 Reviews</span>
+                </div>
+
+                <div class="price-box">
+                    <div class="price">₹450</div>
+                    <div>
+                        <span class="mrp">MRP ₹540</span>
+                        <span class="discount">17% off</span>
+                    </div>
+                    <p style="font-size:14px; color:#666;">Inclusive of all taxes</p>
+                </div>
+
+                <div class="buy-section">
+                    <select>
+                        <option>1 Box of 10 x 10 Tablets (4mg)</option>
+                        <option>1 Box of 10 x 10 Tablets (8mg)</option>
+                        <option>1 Box of 10 x 10 Tablets (16mg)</option>
+                    </select>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="product-highlights">
+                    <h2>Product highlights</h2>
+                    <ul>
+                        <li>Contains Methylprednisolone, a corticosteroid used to reduce inflammation and suppress the immune system</li>
+                        <li>Beneficial in conditions like arthritis, severe allergies, asthma, and certain autoimmune disorders</li>
+                        <li>Available in multiple strengths (4mg, 8mg, 16mg) for dosage flexibility as prescribed by a physician</li>
+                    </ul>
+                </div>
+
+                <div class="additional-offers">
+                    <h3>Additional offers</h3>
+                    <p>Get an extra 5% off on credit card payments. Terms and conditions apply.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-info-section">
+            <h3>More on Product Information</h3>
+            <p>Methylprednisolone is a potent corticosteroid that helps reduce inflammation and modulate immune responses. It can be used short-term for acute conditions or long-term under strict medical supervision. Dosage and duration depend on the specific medical condition and response to treatment. Always follow your doctor’s guidelines.</p>
+            <p>Commonly prescribed for a variety of conditions, including rheumatoid arthritis, lupus, severe allergic reactions, certain skin disorders, and respiratory problems, Methylprednisolone aims to alleviate inflammation, swelling, and discomfort.</p>
+        </div>
+
+        <div class="faq-section">
+            <h3>FAQ</h3>
+            <div class="faq-item">
+                <p class="faq-question">Q: How should I take GMP-8 Tablets?</p>
+                <p class="faq-answer">A: Take this medication exactly as prescribed by your physician. Usually taken orally with or without food. Follow the prescribed dosage schedule and do not discontinue abruptly without consulting your doctor.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: What are common side effects?</p>
+                <p class="faq-answer">A: Common side effects may include upset stomach, headache, dizziness, or mood changes. Long-term use may lead to more serious effects like weight gain, high blood pressure, or changes in bone density. Contact your doctor if side effects are persistent or worsen.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I take GMP-8 Tablets during pregnancy?</p>
+                <p class="faq-answer">A: Consult your doctor before using this medication if you are pregnant, planning to become pregnant, or breastfeeding. Your doctor will determine if the benefits outweigh potential risks.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: What if I miss a dose?</p>
+                <p class="faq-answer">A: If you miss a dose, take it as soon as you remember. If it’s close to your next dose, skip the missed one and continue your regular schedule. Do not double the dose to catch up.</p>
+            </div>
+        </div>
+
+        <div class="ratings-reviews">
+            <h3>Ratings & Reviews</h3>
+            <div class="ratings-overview">
+                <div class="score">4.6★</div>
+                <p>1,450 Ratings & 250 Reviews</p>
+            </div>
+
+            <div class="review">
+                <p class="author">Arti Sharma</p>
+                <p class="date">10 June 2024</p>
+                <p>Helped me manage my asthma flare-ups effectively. Doctor’s advice was to taper off gradually, which I did with no issues.</p>
+            </div>
+
+            <div class="review">
+                <p class="author">Vishal Kapoor</p>
+                <p class="date">22 June 2024</p>
+                <p>Reduced the swelling in my joints significantly. Good price and timely delivery.</p>
+            </div>
+
+            <div class="review">
+                <p class="author">Neha Gupta</p>
+                <p class="date">5 July 2024</p>
+                <p>Used for a short course to control a severe allergic reaction. Worked as intended with no major side effects.</p>
+            </div>
+        </div>
+
+        <div class="similar-products">
+            <h3>Similar products</h3>
+            <div class="similar-grid">
+                <div class="similar-item">
+                    <img src="../assets/dedine.jpg" alt="DEDINE Tablets">
+                    <p>DEDINE Tablets</p>
+                    <p>MRP ₹300</p>
+                </div>
+                <div class="similar-item">
+                    <img src="../assets/isochid10.jpg" alt="ISOCHID-10 Softgel">
+                    <p>ISOCHID-10 Softgel</p>
+                    <p>MRP ₹350</p>
+                </div>
+                <div class="similar-item">
+                    <img src="../assets/riz-lm.jpg" alt="RIZ-LM Tablets">
+                    <p>RIZ-LM Tablets</p>
+                    <p>MRP ₹250</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 G K Orchids. All rights reserved.
+    </footer>
+
+    <script>
+        // Basic interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button in nav
+            const contactBtn = document.querySelector('nav .btn1');
+            contactBtn.addEventListener('click', function() {
+                window.location.href = 'contact.html';
+            });
+
+            // Navigation menu toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('showing');
+            });
+        });
+    </script>
+</body>
+</html>

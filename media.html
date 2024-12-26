@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G K Orchids - Media</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            box-sizing: border-box;
+            background: #fff;
+            color: #1A1A1A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .btn1 {
+            background-color: #5D2E75;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .btn1:hover {
+            background-color: #4A2560;
+        }
+
+        /* Navigation toggle (hamburger menu) */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            height: 2px;
+            background: #333;
+            margin: 4px 0;
+            width: 25px;
+        }
+
+        h1, h2 {
+            color: #1A1A1A;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Media sections */
+        .media-section {
+            margin-bottom: 60px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .media-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .media-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .media-card p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .media-card a {
+            text-decoration: none;
+            color: #5D2E75;
+            font-weight: bold;
+        }
+
+        .media-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Reports section */
+        .reports-section {
+            margin-bottom: 60px;
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .report-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #fafafa;
+        }
+
+        .report-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .report-card ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .report-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .report-card a {
+            text-decoration: none;
+            color: #5D2E75;
+        }
+
+        .report-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f8f8f8;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #5D2E75;
+            text-decoration: underline;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 calc(20% - 2rem);
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+        }
+
+        .footer-bottom .logo {
+            max-width: 100px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            nav ul.showing {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content, .hero-image {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="landing.html"><img src="assets/GK Orchids - Logo.png" alt="G K Orchids Logo" class="logo"></a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><button class="btn1">Contact Us</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-header container">
+            <h1>Media & Reports</h1>
+            <p>Stay informed with our latest reports, press releases, and multimedia resources.</p>
+        </section>
+
+        <section class="media-section container">
+            <h2>Press Releases & News</h2>
+            <p class="subtitle">Get the latest company announcements and news updates.</p>
+            <div class="media-grid">
+                <div class="media-card">
+                    <h3>Company Expansion</h3>
+                    <p>We are proud to announce the opening of our new R&D center focusing on innovative dermatological treatments.</p>
+                    <a href="#">Read More &raquo;</a>
+                </div>
+                <div class="media-card">
+                    <h3>New Product Launch</h3>
+                    <p>Introducing our latest skincare solution aimed at improving patient outcomes and quality of life.</p>
+                    <a href="#">Read More &raquo;</a>
+                </div>
+                <div class="media-card">
+                    <h3>Conference Highlights</h3>
+                    <p>Highlights from our recent appearance at the Global Pharma Summit.</p>
+                    <a href="#">Read More &raquo;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="media-section container">
+            <h2>Video & Multimedia</h2>
+            <p class="subtitle">Explore our brand story, product demos, and expert interviews.</p>
+            <div class="media-grid">
+                <div class="media-card">
+                    <h3>Brand Overview Video</h3>
+                    <p>A brief introduction to G K Orchids’ mission and impact in healthcare innovation.</p>
+                    <a href="#">Watch Now &raquo;</a>
+                </div>
+                <div class="media-card">
+                    <h3>Skincare Webinar</h3>
+                    <p>Join our leading dermatologists as they discuss the future of skincare.</p>
+                    <a href="#">Watch Now &raquo;</a>
+                </div>
+                <div class="media-card">
+                    <h3>Laboratory Tour</h3>
+                    <p>Take a virtual tour of our state-of-the-art R&D laboratories.</p>
+                    <a href="#">Watch Now &raquo;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="media-section container">
+            <h2>Image Gallery</h2>
+            <p class="subtitle">Browse high-quality images of our products, facilities, and events.</p>
+            <div class="media-grid">
+                <div class="media-card">
+                    <h3>Product Images</h3>
+                    <p>Download high-resolution images of our product lineup.</p>
+                    <a href="#">View Gallery &raquo;</a>
+                </div>
+                <div class="media-card">
+                    <h3>Facility Images</h3>
+                    <p>Explore images showcasing our cutting-edge manufacturing and R&D facilities.</p>
+                    <a href="#">View Gallery &raquo;</a>
+                </div>
+                <div class="media-card">
+                    <h3>Event Highlights</h3>
+                    <p>Photos from our participation in industry events and conferences.</p>
+                    <a href="#">View Gallery &raquo;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="reports-section container">
+            <h2>Annual & Quarterly Reports</h2>
+            <p class="subtitle">Access our latest financial and operational reports to stay updated on our performance.</p>
+            <div class="reports-grid">
+                <div class="report-card">
+                    <h3>Annual Reports</h3>
+                    <ul>
+                        <li><a href="#">Annual Report 2024 (PDF)</a></li>
+                        <li><a href="#">Annual Report 2023 (PDF)</a></li>
+                        <li><a href="#">Annual Report 2022 (PDF)</a></li>
+                    </ul>
+                </div>
+                <div class="report-card">
+                    <h3>Quarterly Reports</h3>
+                    <ul>
+                        <li><a href="#">Q1 2024 (PDF)</a></li>
+                        <li><a href="#">Q2 2024 (PDF)</a></li>
+                        <li><a href="#">Q3 2024 (PDF)</a></li>
+                        <li><a href="#">Q4 2023 (PDF)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Briller C</a></li>
+                        <li><a href="#">Pilzo Lotion</a></li>
+                        <li><a href="#">OZ Soap</a></li>
+                        <li><a href="#">Gardena Soap</a></li>
+                        <li><a href="#">UV Guard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Blog</h3>
+                    <ul>
+                        <li><a href="#">Anti-Aging Products</a></li>
+                        <li><a href="#">Skin-Whitening Products</a></li>
+                        <li><a href="#">Skin-Tightening Products</a></li>
+                        <li><a href="#">Healthy Skin Lifestyle</a></li>
+                        <li><a href="#">Unhealthy Skin Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Media</h3>
+                    <ul>
+                        <li><a href="#">Annual Report 2024</a></li>
+                        <li><a href="#">Q1 2024</a></li>
+                        <li><a href="#">Q2 2024</a></li>
+                        <li><a href="#">Q3 2024</a></li>
+                        <li><a href="#">Annual Report 2022</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Investor</h3>
+                    <ul>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Why Invest</a></li>
+                        <li><a href="#">Event & Presentations</a></li>
+                        <li><a href="#">Financials</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Stock Info</a></li>
+                        <li><a href="#">Corporate Governance</a></li>
+                        <li><a href="#">Shareholder Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="contact.html">Email</a></li>
+                        <li><a href="contact.html">Phone/Whatsapp</a></li>
+                        <li><a href="contact.html">Address</a></li>
+                        <li><a href="contact.html">Social Media</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="assets/GK Orchids - Logo.png" alt="Logo" class="logo">
+                <p>&copy; 2018 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Basic interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button in nav
+            const contactBtn = document.querySelector('nav .btn1');
+            contactBtn.addEventListener('click', function() {
+                window.location.href = 'contact.html';
+            });
+
+            // Navigation menu toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('showing');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G K Orchids - Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            box-sizing: border-box;
+            background: #fff;
+            color: #1A1A1A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .btn1 {
+            background-color: #5D2E75;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .btn1:hover {
+            background-color: #4A2560;
+        }
+
+        /* Navigation toggle (hamburger menu) */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            height: 2px;
+            background: #333;
+            margin: 4px 0;
+            width: 25px;
+        }
+
+        h1, h2 {
+            color: #1A1A1A;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Form Styles */
+        .contact-hero {
+            text-align: center;
+            padding: 4rem 0 2rem;
+        }
+
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .contact-section {
+            padding: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .contact-details, .contact-form-container {
+            flex: 1 1 45%;
+            max-width: 45%;
+        }
+
+        .contact-details h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .contact-details a {
+            color: #5D2E75;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form-container h2 {
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-submit {
+            background-color: #5D2E75;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-submit:hover {
+            background-color: #4A2560;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f8f8f8;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #5D2E75;
+            text-decoration: underline;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 calc(20% - 2rem);
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+        }
+
+        .footer-bottom .logo {
+            max-width: 100px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            nav ul.showing {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .contact-section {
+                flex-direction: column;
+            }
+
+            .contact-details, .contact-form-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content, .hero-image {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="landing.html"><img src="assets/GK Orchids - Logo.png" alt="G K Orchids Logo" class="logo"></a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><button class="btn1">Contact Us</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We’d love to hear from you. Whether you have questions about our products, need assistance, or just want to talk about healthcare solutions, we’re here to help.</p>
+            </div>
+        </section>
+
+        <section class="contact-section container">
+            <div class="contact-details">
+                <h2>Get in Touch</h2>
+                <p><strong>Email:</strong> <a href="mailto:info@gkorchids.com">info@gkorchids.com</a></p>
+                <p><strong>Phone/WhatsApp:</strong> <a href="tel:+1234567890">+1 234 567 890</a></p>
+                <p><strong>Address:</strong><br>123 Pharma Street,<br>Healthcare City,<br>South Asia.</p>
+                <p><strong>Social Media:</strong></p>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="yourname@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Briller C</a></li>
+                        <li><a href="#">Pilzo Lotion</a></li>
+                        <li><a href="#">OZ Soap</a></li>
+                        <li><a href="#">Gardena Soap</a></li>
+                        <li><a href="#">UV Guard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Blog</h3>
+                    <ul>
+                        <li><a href="#">Anti-Aging Products</a></li>
+                        <li><a href="#">Skin-Whitening Products</a></li>
+                        <li><a href="#">Skin-Tightening Products</a></li>
+                        <li><a href="#">Healthy Skin Lifestyle</a></li>
+                        <li><a href="#">Unhealthy Skin Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Media</h3>
+                    <ul>
+                        <li><a href="#">Annual Report 2024</a></li>
+                        <li><a href="#">Q1 2024</a></li>
+                        <li><a href="#">Q2 2024</a></li>
+                        <li><a href="#">Q3 2024</a></li>
+                        <li><a href="#">Annual Report 2022</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Investor</h3>
+                    <ul>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Why Invest</a></li>
+                        <li><a href="#">Event & Presentations</a></li>
+                        <li><a href="#">Financials</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Stock Info</a></li>
+                        <li><a href="#">Corporate Governance</a></li>
+                        <li><a href="#">Shareholder Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="contact.html">Email</a></li>
+                        <li><a href="contact.html">Phone/Whatsapp</a></li>
+                        <li><a href="contact.html">Address</a></li>
+                        <li><a href="contact.html">Social Media</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="assets/GK Orchids - Logo.png" alt="Logo" class="logo">
+                <p>&copy; 2018 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Basic interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button in nav
+            const contactBtn = document.querySelector('nav .btn1');
+            contactBtn.addEventListener('click', function() {
+                window.location.href = 'contact.html';
+            });
+
+            // Navigation menu toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('showing');
+            });
+
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                alert('Thank you for contacting us, ' + name + '! We will respond to ' + email + ' soon.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>

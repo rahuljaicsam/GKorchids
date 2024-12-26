@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G K Orchids - Pharmaceutical Innovation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+        .btn {
+            background-color: #5D2E75;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #4A2560;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4rem 0;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+        .video-placeholder {
+            background-color: #9B8B9D;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+        .play-icon {
+            font-size: 4rem;
+            color: white;
+        }
+        .features {
+            background-color: #5D2E75;
+            color: white;
+            padding: 4rem 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature {
+            text-align: center;
+        }
+        .testimonials {
+            padding: 4rem 0;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .stars {
+            color: gold;
+        }
+        .skincare {
+            background-color: #f8f8f8;
+            padding: 4rem 0;
+        }
+        .skincare-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-form {
+            display: flex;
+            gap: 1rem;
+        }
+        .search-input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        footer {
+            background-color: #f8f8f8;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+        }
+        .footer-column h3 {
+            margin-bottom: 1rem;
+        }
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <img src="assets/GK Orchids - Logo.png" alt="G K Orchids Logo" class="logo">
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><button class="btn">Contact</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Welcome to G K Orchids</h1>
+                <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Leading the way in pharmaceutical innovation</p>
+                <button class="btn" style="margin-right: 1rem;">Explore Our Products</button>
+                <button class="btn" style="background-color: white; color: #5D2E75; border: 1px solid #5D2E75;">Contact Us</button>
+            </div>
+            <div class="hero-image">
+                <div class="video-placeholder">
+                    <span class="play-icon">▶</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature">
+                        <h2>Established</h2>
+                        <p style="font-size: 2rem;">2018</p>
+                        <button class="btn" style="background-color: transparent; border: 1px solid white;">Explore Products</button>
+                    </div>
+                    <div class="feature">
+                        <h2>Our Best Product</h2>
+                        <p>Best in Anti-Aging creams</p>
+                        <button class="btn" style="background-color: transparent; border: 1px solid white;">View Details</button>
+                    </div>
+                    <div class="feature">
+                        <h2>Latest News</h2>
+                        <p>Stay updated with the latest news and developments.</p>
+                        <button class="btn" style="background-color: transparent; border: 1px solid white;">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials container">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Best Dermatology Pharma in South Asia</h2>
+            <p style="text-align: center; color: #666; max-width: 600px; margin: 0 auto 2rem;">We are proud to serve our customers with the highest quality derma products and services.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>The products from this company have greatly improved my health.</p>
+                    <div style="display: flex; align-items: center; margin-top: 1rem;">
+                        <img src="https://via.placeholder.com/50" alt="John Smith" style="border-radius: 50%; margin-right: 1rem;">
+                        <div>
+                            <strong>John Smith</strong>
+                            <p style="margin: 0; color: #666;">CEO, ABC Pharmaceuticals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>I have been a loyal customer for years and I trust this company for all my medical needs.</p>
+                    <div style="display: flex; align-items: center; margin-top: 1rem;">
+                        <img src="https://via.placeholder.com/50" alt="Jane Doe" style="border-radius: 50%; margin-right: 1rem;">
+                        <div>
+                            <strong>Jane Doe</strong>
+                            <p style="margin: 0; color: #666;">Medical Researcher, XYZ Labs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>The innovation and breakthroughs from this company are unmatched in the industry.</p>
+                    <div style="display: flex; align-items: center; margin-top: 1rem;">
+                        <img src="https://via.placeholder.com/50" alt="Michael Johnson" style="border-radius: 50%; margin-right: 1rem;">
+                        <div>
+                            <strong>Michael Johnson</strong>
+                            <p style="margin: 0; color: #666;">Investor, Pharma Investments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skincare">
+            <div class="container skincare-content">
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Skincare Solutions</h2>
+                    <p style="color: #666; margin-bottom: 1rem;">Providing high-quality healthcare products</p>
+                    <form class="search-form">
+                        <input type="search" placeholder="Search products" class="search-input">
+                        <button type="submit" class="btn">Explore</button>
+                    </form>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">By clicking Sign Up you're confirming that you agree with our Privacy Policy.</p>
+                </div>
+                <img src="assets/dermawand-banner-min.jpg" alt="Skincare Product Demo" style="border-radius: 8px;" width="100px" height="40px">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Briller C</a></li>
+                        <li><a href="#">Pilzo Lotion</a></li>
+                        <li><a href="#">OZ Soap</a></li>
+                        <li><a href="#">Gardena Soup</a></li>
+                        <li><a href="#">UV Gaurd</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Blog</h3>
+                    <ul>
+                        <li><a href="#">Anti-Aging Products</a></li>
+                        <li><a href="#">Skin-Whitening Products</a></li>
+                        <li><a href="#">Skin-tightening Products</a></li>
+                        <li><a href="#">Healthy skin lifestyle</a></li>
+                        <li><a href="#">Unhealthy skin lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Media</h3>
+                    <ul>
+                        <li><a href="#">Media 1</a></li>
+                        <li><a href="#">Media 2</a></li>
+                        <li><a href="#">Media 3</a></li>
+                        <li><a href="#">Media 4</a></li>
+                        <li><a href="#">Media 5</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Investor</h3>
+                    <ul>
+                        <li><a href="#">Investor 1</a></li>
+                        <li><a href="#">Investor 2</a></li>
+                        <li><a href="#">Investor 3</a></li>
+                        <li><a href="#">Investor 4</a></li>
+                        <li><a href="#">Investor 5</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Phone</a></li>
+                        <li><a href="#">Address</a></li>
+                        <li><a href="#">Social Media</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="assets/GK Orchids - Logo.png" alt="Logo" style="margin-bottom: 1rem;" class="logo">
+                <p>&copy; 2018 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for basic interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button functionality
+            const contactBtn = document.querySelector('nav .btn');
+            contactBtn.addEventListener('click', function() {
+                alert('Contact form will be displayed here.');
+            });
+
+            // Search form functionality
+            const searchForm = document.querySelector('.search-form');
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const searchInput = this.querySelector('input[type="search"]');
+                alert('You searched for: ' + searchInput.value);
+            });
+
+            // Add hover effect to all buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    this.style.opacity = '0.8';
+                });
+                button.addEventListener('mouseout', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

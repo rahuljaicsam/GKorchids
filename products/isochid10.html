@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISOCHID-10 SOFTGEL | G K Orchids</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-size: 14px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-images {
+            flex: 1 1 300px;
+            max-width: 300px;
+            border: 1px solid #eee;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-images img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .thumbnail-list img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product-info {
+            flex: 1 1 500px;
+        }
+
+        .product-info h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .brand, .rating-and-reviews {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-and-reviews span {
+            margin-right: 8px;
+        }
+
+        .rating {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .price-box {
+            margin: 1rem 0;
+            background: #f9f9f9;
+            padding: 1rem;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+        }
+
+        .price-box .price {
+            font-size: 1.5rem;
+            color: #e53935;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-box .mrp {
+            color: #666;
+            font-size: 14px;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .price-box .discount {
+            color: #28a745;
+            font-size: 14px;
+        }
+
+        .buy-section {
+            margin-top: 1rem;
+        }
+
+        .buy-section select,
+        .buy-section button {
+            padding: 0.5rem;
+            font-size: 14px;
+            margin-right: 0.5rem;
+        }
+
+        .buy-section button {
+            background-color: #e53935;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .buy-section button:hover {
+            background-color: #c62828;
+        }
+
+        .product-highlights {
+            margin-top: 2rem;
+        }
+
+        .product-highlights h2 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .product-highlights ul {
+            list-style: disc;
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .additional-offers, .ratings-reviews {
+            margin-top: 2rem;
+        }
+
+        .additional-offers h3,
+        .ratings-reviews h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .additional-offers p,
+        .ratings-reviews p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .ratings-overview {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ratings-overview .score {
+            font-size: 2rem;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .review {
+            border-top: 1px solid #eaeaea;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .review p {
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+        }
+
+        .review .author {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .review .date {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .similar-products {
+            margin-top: 2rem;
+        }
+
+        .similar-products h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .similar-grid {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .similar-item {
+            border: 1px solid #eee;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .similar-item img {
+            max-width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .similar-item p {
+            font-size: 14px;
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        footer {
+            border-top: 1px solid #eaeaea;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail {
+                flex-direction: column;
+            }
+            .similar-grid {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">G K Orchids</div>
+                <div>
+                    <a href="landing.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="media.html">Media</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <p style="font-size:14px; color:#666; margin-top:1rem;">
+            Home > Featured > Capsules & Softgels > ISOCHID-10 SOFTGEL
+        </p>
+
+        <div class="product-detail">
+            <!-- Left column: product images -->
+            <div class="product-images">
+                <img src="path_to_isochid_image.jpg" alt="ISOCHID-10 SOFTGEL">
+                <div class="thumbnail-list">
+                    <img src="path_to_isochid_image.jpg" alt="Thumbnail 1">
+                    <img src="path_to_isochid_image.jpg" alt="Thumbnail 2">
+                    <img src="path_to_isochid_image.jpg" alt="Thumbnail 3">
+                </div>
+            </div>
+
+            <!-- Right column: product info -->
+            <div class="product-info">
+                <h1>ISOCHID-10 SOFTGEL</h1>
+                <div class="brand">By G K Orchids Pharmaceuticals Ltd</div>
+                <div class="rating-and-reviews">
+                    <span class="rating">4.2★</span>
+                    <span>864 Ratings & 90 Reviews</span>
+                </div>
+
+                <div class="price-box">
+                    <div class="price">₹350</div>
+                    <div>
+                        <span class="mrp">MRP ₹420</span>
+                        <span class="discount">17% off</span>
+                    </div>
+                    <p style="font-size:14px; color:#666;">Inclusive of all taxes</p>
+                </div>
+
+                <div class="buy-section">
+                    <select>
+                        <option>1 Strip of 10 Softgels</option>
+                        <option>2 Strips of 10 Softgels</option>
+                        <option>3 Strips of 10 Softgels</option>
+                    </select>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="product-highlights">
+                    <h2>Product highlights</h2>
+                    <ul>
+                        <li>Contains Isotretinoin 10mg, used for severe acne management</li>
+                        <li>Helps reduce oiliness and promote clearer skin</li>
+                        <li>Typically prescribed when other treatments haven’t worked</li>
+                    </ul>
+                </div>
+
+                <div class="additional-offers">
+                    <h3>Additional offers</h3>
+                    <p>Get 10% cashback on select payment methods. Conditions apply.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ratings-reviews">
+            <h3>Ratings & Reviews</h3>
+            <div class="ratings-overview">
+                <div class="score">4.2★</div>
+                <p>864 Ratings & 90 Reviews</p>
+            </div>
+
+            <div class="review">
+                <p class="author">Sunita Mehta</p>
+                <p class="date">12 January 2023</p>
+                <p>Helped reduce my acne after a few weeks. Make sure to follow the doctor’s advice closely!</p>
+            </div>
+
+            <div class="review">
+                <p class="author">Arjun Malik</p>
+                <p class="date">5 February 2023</p>
+                <p>It took time, but the results are visible. Skin looks much clearer now.</p>
+            </div>
+
+            <div class="review">
+                <p class="author">Priyanka Sharma</p>
+                <p class="date">20 March 2023</p>
+                <p>Worked well, though I had some dryness. Using a good moisturizer helped.</p>
+            </div>
+        </div>
+
+        <div class="similar-products">
+            <h3>Similar products</h3>
+            <div class="similar-grid">
+                <div class="similar-item">
+                    <img src="path_to_similar_product.jpg" alt="Similar Product 1">
+                    <p>ISOCHID-20 SOFTGEL</p>
+                    <p>MRP ₹599</p>
+                </div>
+                <div class="similar-item">
+                    <img src="path_to_similar_product.jpg" alt="Similar Product 2">
+                    <p>GMP-8 Tablets</p>
+                    <p>MRP ₹300</p>
+                </div>
+                <div class="similar-item">
+                    <img src="path_to_similar_product.jpg" alt="Similar Product 3">
+                    <p>RIZ-LM Tablets</p>
+                    <p>MRP ₹250</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 G K Orchids. All rights reserved.
+    </footer>
+    <script>
+        // Basic interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button in nav
+            const contactBtn = document.querySelector('nav .btn1');
+            contactBtn.addEventListener('click', function() {
+                window.location.href = 'contact.html';
+            });
+
+            // Navigation menu toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('showing');
+            });
+
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                alert('Thank you for contacting us, ' + name + '! We will respond to ' + email + ' soon.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
